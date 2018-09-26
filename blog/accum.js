@@ -10,6 +10,7 @@ const accum = string => {
 console.log(accum('abcd'))
 
 const _accum = string => {
+  if (typeof string !== 'string')  throw new Error('string is invalid string') 
    return Array.from(string, (i,index) => {
      return  i.toLocaleUpperCase() + new Array(index).fill(i.toLocaleLowerCase()).join('')
    }).join('-')
